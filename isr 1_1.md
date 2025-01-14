@@ -1,0 +1,326 @@
+
+
+#Листинг из командной строки:
+```
+Microsoft Windows [Version 10.0.19045.5247]
+(c) Корпорация Майкрософт (Microsoft Corporation). Все права защищены.
+
+C:\Users\indeec>\В
+"\В" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+C:\Users\indeec>\D
+"\D" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+C:\Users\indeec>cd \D
+
+C:\D>cd it_management
+
+C:\D\it_management>git init
+Initialized empty Git repository in C:/D/it_management/.git/
+
+C:\D\it_management>ls -la
+"ls" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+C:\D\it_management>git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+C:\D\it_management>nano readme.txt
+"nano" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+C:\D\it_management>echo Hello! >> readme.txt
+
+C:\D\it_management>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        readme.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\D\it_management>git add readme.txt
+
+C:\D\it_management>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   readme.txt
+
+
+C:\D\it_management>git commit -m "First file"
+[master (root-commit) 02176ee] First file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 readme.txt
+
+C:\D\it_management>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\D\it_management>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\D\it_management>git add readme.txt
+
+C:\D\it_management>git add '*.txt'
+fatal: pathspec ''*.txt'' did not match any files
+
+C:\D\it_management>git add '*.txt'
+fatal: pathspec ''*.txt'' did not match any files
+
+C:\D\it_management>git add *.txt
+
+C:\D\it_management>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   readme after.txt
+        new file:   readme now.txt
+        modified:   readme.txt
+
+
+C:\D\it_management>git commit -m "All files added"
+[master e9ae089] All files added
+ 3 files changed, 3 insertions(+), 1 deletion(-)
+ create mode 100644 readme after.txt
+ create mode 100644 readme now.txt
+
+C:\D\it_management>git log
+commit e9ae08937cf4c972ee9ff60e28b325b5f87e64fb (HEAD -> master)
+Author: indeecdedushka <60599257+indeecdedushka@users.noreply.github.com>
+Date:   Sun Jan 12 03:43:42 2025 +0300
+
+    All files added
+
+commit 02176ee74708006ecec1986adc47afb5fff99e32
+Author: indeecdedushka <60599257+indeecdedushka@users.noreply.github.com>
+Date:   Sun Jan 12 03:36:41 2025 +0300
+
+    First file
+
+C:\D\it_management>git remote add origin https://github.com/indeecdedushka/IT_projects_mag.git
+
+C:\D\it_management>git push -u origin master
+info: please complete authentication in your browser...
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (6/6), 451 bytes | 225.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/indeecdedushka/IT_projects_mag.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+C:\D\it_management>git pull origin master
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 918 bytes | 45.00 KiB/s, done.
+From https://github.com/indeecdedushka/IT_projects_mag
+ * branch            master     -> FETCH_HEAD
+   e9ae089..0be1727  master     -> origin/master
+Updating e9ae089..0be1727
+Fast-forward
+ readme.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+C:\D\it_management>git diff HEAD
+
+C:\D\it_management>git diff HEAD
+diff --git a/readme.txt b/readme.txt
+index 5424ccd..7780f02 100644
+--- a/readme.txt
++++ b/readme.txt
+@@ -1,3 +1,3 @@
+-Hello world!
+-Hello world!
+-Hello world!
++Hello world
++Hello world
++Hello world
+
+C:\D\it_management>git add folder/bye.txt
+
+C:\D\it_management>git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   folder/bye.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   readme.txt
+
+
+C:\D\it_management>git diff
+diff --git a/readme.txt b/readme.txt
+index 5424ccd..7780f02 100644
+--- a/readme.txt
++++ b/readme.txt
+@@ -1,3 +1,3 @@
+-Hello world!
+-Hello world!
+-Hello world!
++Hello world
++Hello world
++Hello world
+
+C:\D\it_management>git diff --staged
+diff --git a/folder/bye.txt b/folder/bye.txt
+new file mode 100644
+index 0000000..e69de29
+
+C:\D\it_management>git rese folder/bye.txt
+git: 'rese' is not a git command. See 'git --help'.
+
+The most similar commands are
+        reset
+        rebase
+
+C:\D\it_management>git reset folder/bye.txt
+Unstaged changes after reset:
+M       readme.txt
+
+C:\D\it_management>git checkout --readme.txt
+error: unknown option `readme.txt'
+usage: git checkout [<options>] <branch>
+   or: git checkout [<options>] [<branch>] -- <file>...
+
+    -b <branch>           create and checkout a new branch
+    -B <branch>           create/reset and checkout a branch
+    -l                    create reflog for new branch
+    --[no-]guess          second guess 'git checkout <no-such-branch>' (default)
+    --[no-]overlay        use overlay mode (default)
+    -q, --[no-]quiet      suppress progress reporting
+    --[no-]recurse-submodules[=<checkout>]
+                          control recursive updating of submodules
+    --[no-]progress       force progress reporting
+    -m, --[no-]merge      perform a 3-way merge with the new branch
+    --[no-]conflict <style>
+                          conflict style (merge, diff3, or zdiff3)
+    -d, --[no-]detach     detach HEAD at named commit
+    -t, --[no-]track[=(direct|inherit)]
+                          set branch tracking configuration
+    -f, --[no-]force      force checkout (throw away local modifications)
+    --[no-]orphan <new-branch>
+                          new unborn branch
+    --[no-]overwrite-ignore
+                          update ignored files (default)
+    --[no-]ignore-other-worktrees
+                          do not check if another worktree is using this branch
+    -2, --ours            checkout our version for unmerged files
+    -3, --theirs          checkout their version for unmerged files
+    -p, --[no-]patch      select hunks interactively
+    --[no-]ignore-skip-worktree-bits
+                          do not limit pathspecs to sparse entries only
+    --[no-]pathspec-from-file <file>
+                          read pathspec from file
+    --[no-]pathspec-file-nul
+                          with --pathspec-from-file, pathspec elements are separated with NUL character
+
+
+C:\D\it_management>git checkout -- readme.txt
+
+C:\D\it_management>git branch clean_up
+
+C:\D\it_management>git branch
+  clean_up
+* master
+
+C:\D\it_management>git checkout clean_up
+Switched to branch 'clean_up'
+
+C:\D\it_management>git branch
+* clean_up
+  master
+
+C:\D\it_management>rm -r folder
+"rm" не является внутренней или внешней
+командой, исполняемой программой или пакетным файлом.
+
+C:\D\it_management>git commit -m
+error: switch `m' requires a value
+
+C:\D\it_management>git commit -m 'Delete folder'
+error: pathspec 'folder'' did not match any file(s) known to git
+
+C:\D\it_management>git commit -m Delete folder
+error: pathspec 'folder' did not match any file(s) known to git
+
+C:\D\it_management>git commit -m "Delete folder'
+On branch clean_up
+nothing to commit, working tree clean
+
+C:\D\it_management>git commit -m "Delete folder"
+On branch clean_up
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    readme after.txt
+        deleted:    readme now.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\D\it_management>git add *.txt
+
+C:\D\it_management>git commit -m "Delete folder"
+[clean_up 48d1304] Delete folder
+ 2 files changed, 2 deletions(-)
+ delete mode 100644 readme after.txt
+ delete mode 100644 readme now.txt
+
+C:\D\it_management>git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+C:\D\it_management>git merge clean_up
+Updating 0be1727..48d1304
+Fast-forward
+ readme after.txt | 1 -
+ readme now.txt   | 1 -
+ 2 files changed, 2 deletions(-)
+ delete mode 100644 readme after.txt
+ delete mode 100644 readme now.txt
+
+C:\D\it_management>git branch -d clean_up
+Deleted branch clean_up (was 48d1304).
+
+C:\D\it_management>git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (1/1), done.
+Writing objects: 100% (2/2), 252 bytes | 252.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/indeecdedushka/IT_projects_mag.git
+   0be1727..48d1304  master -> master
+
+C:\D\it_management>Hello world!
+
+
+
+```
